@@ -44,7 +44,7 @@ module "asg" {
 }
 
 module "ec2" {
-  source         = "github.com/LuisRuivo21/modules//infrastructure//ec2"
+  source         = "github.com/LuisRuivo21/modules//infrastructure/ec2"
   ssh_alb_sg_ids = module.sg.ssh_alb_sg_ids
 }
 
@@ -53,6 +53,6 @@ module "network" {
 }
 
 module "sg" {
-  source = "github.com/LuisRuivo21/modules//infrastructure/asg"
+  source = "github.com/LuisRuivo21/modules//infrastructure/sg"
   vpc_id = module.network.vpc_id
 }
